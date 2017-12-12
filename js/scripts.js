@@ -5,12 +5,25 @@ Client = function(name, county, size, energy) {
   this.energy = energy;
 }
 
+
+Client.prototype.pickDog = function() {
+  if (this.county === "1") {
+    return dogOne.name;
+  } else if (this.county === "2") {
+    return dogTwo.name;
+  } else if (this.county === "3") {
+    return dogThree.name;
+  } else if (this.county === "4") {
+    return dogFour.name;
+  }
+}
 var dogOne = {
   name: "Charlie",
   age: 1,
   walk: 2,
   play: 1,
   size: "small",
+  county: "Multnomah County"
 };
 
 var dogTwo = {
@@ -19,6 +32,7 @@ var dogTwo = {
   walk: 4,
   play: 2,
   size: "medium",
+  county: "Washington County"
 };
 
 var dogThree = {
@@ -27,6 +41,7 @@ var dogThree = {
   walk: 4,
   play: 3,
   size: "medium",
+  county: "Clackamas County"
 };
 
 var dogFour = {
@@ -35,8 +50,8 @@ var dogFour = {
   walk: 6,
   play: 2,
   size: "large",
+  county: ["The Shire"]
 };
-
 
 $(document).ready(function() {
 $("#clientInfo").submit(function(event) {
@@ -46,10 +61,7 @@ $("#clientInfo").submit(function(event) {
   var size = $("#size").val();
   var energy = $("#energy").val();
   var newClient = new Client(name, county, size, energy);
-  console.log(newClient);
-  console.log(dogOne);
-  console.log(dogTwo);
-  console.log(dogThree);
-  console.log(dogFour);
+
+  $("ul#dogs").append("<li>" + newClient.pickDog() + "</li>");
   });
 });
