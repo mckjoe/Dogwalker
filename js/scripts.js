@@ -109,6 +109,7 @@ $("#clientInfo").submit(function(event) {
   var size = $("#size").val();
   var energy = $("#energy").val();
   var newClient = new Client(name, county, size, energy);
-  newClient.pickDog();
+
+  newClient.pickDog()
   });
 });
