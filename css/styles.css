@@ -1,11 +1,31 @@
 .page1 {
   background-image: url("../img/glamourwalk.jpeg");
+  height: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 body, html {
   height: 100%;
 }
 
+.col-xs-6 {
+  margin: 50px;
+}
+
+.page1b {
+  display: none;
+}
+
+.walkers {
+  display: none;
+}
+
+#dogos {
+  display: none;
+}
 #page2a {
   display: none;
   background-image: url("../img/dog-bg1.jpg");

@@ -1,18 +1,24 @@
-Client = function(name, county, size, energy) {
+Client = function(name, age, county, energy) {
   this.name = name;
+  this.age = age;
   this.county = county;
-  this.size = size;
   this.energy = energy;
 }
 
-
-Client.prototype.pickDog = function() {
-  if (this.county === "1") {
-    $("#dogs").append("<li>" + multOne.name + "</li>");
-    $("#dogs").append("<li>" + multTwo.name + "</li>");
-    $("#dogs").append("<li>" + multThree.name + "</li>");
-  }
+Dog = function(name, size, county, energy) {
+  this.name = name;
+  this.size = size;
+  this.county = county;
+  this.energy = energy;
 }
+
+Client.prototype.info = function() {
+  return "Name: " + this.name + " Age: " + this.age + " County: " + this.county;
+}
+Dog.prototype.info2 = function() {
+  return "Name: " + this.name + " Size: " + this.size + " County: " + this.county;
+}
+
 
 var multOne = {
   name: "Charlie",
@@ -97,23 +103,57 @@ var  clackThree = {
 
 $(document).ready(function() {
   $("#enter").click(function() {
-    $(".page1").fadeOut();
-    $("#page2a").fadeIn();
+    $(".page1").hide();
+    $(".page1b").fadeIn();
+  });
+
+  $("#dog-form").click(function() {
+    $(".page1b").hide();
     $("#page2b").fadeIn();
+  });
+
+  $("#client-form").click(function() {
+    $(".page1b").hide();
+    $("#page2a").fadeIn();
   });
 
 $("#clientInfo").submit(function(event) {
   event.preventDefault();
-  var name = $("#name").val();
-  var county = $("#county").val();
-  var size = $("#size").val();
-  var energy = $("#energy").val();
-  var newClient = new Client(name, county, size, energy);
 
-  newClient.pickDog();
-  $("li").click(function() {
-    $(this).slideUp();
-  })
+  $("#page2b").hide();
+  var name = $("#name2b").val();
+  var age = $("#age2b").val();
+  var county = $("#county2b").val();
+  var energy = $("#energy2b").val();
+  var newClient = new Client(name, age, county, energy);
+  var person = newClient.info();
+
+  $("p#personObject").text(person);
+  $("ol.unstyled").append("<li>" + multOne.name + "</li>");
+  $("ol.unstyled").append("<li>" + multTwo.name + "</li>");
+  $("ol.unstyled").append("<li>" + multThree.name + "</li>");
+  $("ol.unstyled").append("<li>" + washOne.name + "</li>");
+  $(".walkers").show();
+  });
+
+$("#dogInfo").submit(function(event) {
+  event.preventDefault();
+
+  $("#page2a").hide();
+  var name = $("#name2a").val();
+  var size = $("#size2a").val();
+  var county = $("#county2a").val();
+  var energy = $("#energy2a").val();
+  var newDog = new Dog(name, size, county, energy);
+  var doggy = newDog.info2();
+
+  $("#dogos").show();
+  $("p#dogObject").text(doggy);
+  $("ol#unstyled2").append("<li>" + multOne.name + "</li>");
+  $("ol#unstyled2").append("<li>" + multTwo.name + "</li>");
+  $("ol#unstyled2").append("<li>" + multThree.name + "</li>");
+  $("ol#unstyled2").append("<li>" + washOne.name + "</li>");
+
 
   });
 });

@@ -12,6 +12,11 @@
     <div class="page1">
       <button id="enter" class="btn btn-danger">Enter Site</button>
     </div>
+    <div class="page1b">
+      <img src="img/BWdog.jpg">
+      <button id="dog-form">Find a Dog</button>
+      <button id="client-form">Find a Walker</button>
+    </div>
     <div class="container">
 
       <div id="page2a">
@@ -24,10 +29,9 @@
             <p>Please select your county:</p>
             <select class="form-control" id="county2a">
               <option>--</option>
-              <option value="1">Multnomah County</option>
-              <option value="2">Washington County</option>
-              <option value="3">Clackamas County</option>
-              <option value="4">The Shire</option>
+              <option>Multnomah County</option>
+              <option>Washington County</option>
+              <option>Clackamas County</option>
             </select>
           </div>
           <div class="form-group">
@@ -69,20 +73,19 @@
           <form id="clientInfo">
             <div class="form-group">
               <label for="name">Your Name:</label>
-              <input id="name" placeholder="--" class="form-control">
+              <input id="name2b" placeholder="--" class="form-control">
             </div>
             <div class="form-group">
-              <label for="name">Your Age:</label>
+              <label for="age">Your Age:</label>
               <input id="age2b" placeholder="--" class="form-control">
             </div>
             <div class="form-group">
               <p>Please select your county:</p>
               <select class="form-control" id="county2b">
                 <option>--</option>
-                <option value="1">Multnomah County</option>
-                <option value="2">Washington County</option>
-                <option value="3">Clackamas County</option>
-                <option value="4">The Shire</option>
+                <option>Multnomah County</option>
+                <option>Washington County</option>
+                <option>Clackamas County</option>
               </select>
             </div>
               <div class="form-group">
@@ -109,8 +112,30 @@
             <button type="submit" class="btn btn-info">Find Dog!</button>
           </form>
         </div>
+        <div class="walkers">
+          <div class="row">
+            <div class="col-xs-6">
+              <ol class="unstyled">
 
+              </ol>
+            </div>
+            <div class="col-xs-6">
+              <p id=personObject></p>
+            </div>
+        </div>
+      </div>
+      <div id="dogos">
+        <div class="row">
+          <div class="col-xs-6">
+            <ol id="unstyled2">
 
+            </ol>
+          </div>
+          <div class="col-xs-6">
+            <p id=dogObject></p>
+          </div>
+        </div>
+      </div>
     </div>
 
   </body>
