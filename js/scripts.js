@@ -110,6 +110,10 @@ $("#clientInfo").submit(function(event) {
   var energy = $("#energy").val();
   var newClient = new Client(name, county, size, energy);
 
-  newClient.pickDog()
+  newClient.pickDog();
+  $("li").click(function() {
+    $(this).slideUp();
+  })
+
   });
 });
