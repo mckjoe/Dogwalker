@@ -12,14 +12,8 @@ Client.prototype.pickDog = function() {
     $("#dogs").append("<li>" + multTwo.name + "</li>");
     $("#dogs").append("<li>" + multThree.name + "</li>");
   }
-  //  else if (this.county === "2") {
-  //   return dogTwo.name;
-  // } else if (this.county === "3") {
-  //   return dogThree.name;
-  // } else if (this.county === "4") {
-  //   return dogFour.name;
-  // }
 }
+
 var multOne = {
   name: "Charlie",
   age: 1,
@@ -102,6 +96,12 @@ var  clackThree = {
 };
 
 $(document).ready(function() {
+  $("#enter").click(function() {
+    $(".page1").fadeOut();
+    $("#page2a").fadeIn();
+    $("#page2b").fadeIn();
+  });
+
 $("#clientInfo").submit(function(event) {
   event.preventDefault();
   var name = $("#name").val();

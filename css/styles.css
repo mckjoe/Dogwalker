@@ -1,8 +1,23 @@
+.page1 {
+  background-image: url("../img/glamourwalk.jpeg");
+}
+
 body, html {
   height: 100%;
 }
 
-.hero-image {
+#page2a {
+  display: none;
+  background-image: url("../img/dog-bg1.jpg");
+  height: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#page2b {
+  display: none;
   background-image: url("../img/dog-bg1.jpg");
   height: 70%;
   background-position: center;
@@ -23,6 +38,10 @@ body, html {
   margin: 30px;
 }
 
-#clientInfo {
-  margin: 40px;
+#clientInfo, #dogInfo {
+  padding-top: 30px;
+  padding: 30px;
+  width: 40%;
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
